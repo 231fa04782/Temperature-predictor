@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Temperature Predictor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌡️ Temperature Predictor</h1>
+    <input type="text" id="cityInput" placeholder="Enter a city name" />
+    <br />
+    <button onclick="predictTemperature()">Predict Temperature</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function predictTemperature() {
+      const city = document.getElementById("cityInput").value.trim();
+
+      if (city === "") {
+        document.getElementById("result").textContent = "Please enter a city name.";
+        return;
+      }
+
+      // Simulate a temperature between -10°C and 45°C
+      const temperature = (Math.random() * 55 - 10).toFixed(1);
+
+      const message = `Predicted temperature in ${city}: ${temperature}°C`;
+
+      document.getElementById("result").textContent = message;
+    }
+  </script>
+</body>
+</html>
